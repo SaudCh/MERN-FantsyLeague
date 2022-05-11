@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.35fe46c8.css",
+    "main.js": "/static/js/main.87d55199.js",
+    "static/media/league.png": "/static/media/league.4d420169b34dd06d9606.png",
+    "static/media/info-back.jpg": "/static/media/info-back.b2394375cf106abce7cc.jpg",
+    "static/media/info-2-back.jpg": "/static/media/info-2-back.ddf728832ad29b63e78a.jpg",
+    "static/media/admin-login-player.svg": "/static/media/admin-login-player.2cffc9aba655ce96b8eefb47f23a66d3.svg",
+    "static/media/user-login-logo.svg": "/static/media/user-login-logo.0bf1de45100a34950a2577d4ae3dc75a.svg",
+    "index.html": "/index.html",
+    "main.35fe46c8.css.map": "/static/css/main.35fe46c8.css.map",
+    "main.87d55199.js.map": "/static/js/main.87d55199.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35fe46c8.css",
+    "static/js/main.87d55199.js"
+  ]
+}

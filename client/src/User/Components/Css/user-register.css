@@ -1,0 +1,86 @@
+.register-custom-shapes-container {
+  position: relative;
+}
+.register-custom-shape-1 {
+  height: 40vh;
+  width: 20vw;
+  border-radius: 18% 82% 30% 70% / 37% 38% 62% 63%;
+  background-color: #fe9117;
+  opacity: 0.2;
+  position: absolute;
+  top: -80px;
+  left: -80px;
+}
+.register-custom-shape-2 {
+  height: 40vh;
+  width: 20vw;
+  border-radius: 18% 82% 30% 70% / 37% 38% 62% 63%;
+  background-color: #1b7cbe;
+  opacity: 0.3;
+
+  position: absolute;
+  z-index: 3;
+  bottom: -80px;
+  right: -80px;
+}
+.register-custom-shape-3 {
+  height: 40vh;
+  width: 20vw;
+  border-radius: 32% 68% 53% 47% / 47% 35% 65% 53%;
+  background-color: #1b7cbe;
+  opacity: 0.3;
+
+  position: absolute;
+  z-index: 3;
+  bottom: -80px;
+  right: -80px;
+}
+.user-register-left-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register-logo {
+  width: 10vh;
+  margin-bottom: 50px;
+}
+.user-register-right-container {
+  background-color: #e8f2f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.register-custom-shape-4 {
+  height: 30vh;
+  width: 15vw;
+  border-radius: 32% 68% 68% 32% / 47% 35% 65% 53%;
+  background-color: rgba(27, 124, 190, 0.2);
+  position: relative;
+  z-index: 3;
+}
+.user-register-player-image {
+  height: 30vh;
+  position: absolute;
+  top: -50px;
+}
+.user-register-section {
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 786px) {
+  .register-custom-shape {
+    width: 40vw;
+    height: 30vh;
+    position: absolute;
+  }
+}
+@media screen and (max-width: 576px) {
+  .user-register-left-container {
+    background-color: #e8f2f8;
+
+  }
+}

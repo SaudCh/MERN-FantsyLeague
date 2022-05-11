@@ -1,0 +1,28 @@
+.fansty-container {
+  min-height: 35vh;
+  width: 100%;
+  background-color: rgba(27, 124, 190, 0.1);
+}
+.league-image {
+  width: 30vh;
+  margin: 10px 0;
+}
+.fansty-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(27, 124, 190, 1);
+}
+.league-goalkeeper-table {
+  background-color: rgb(235, 255, 0);
+  /* //rgb(0, 255, 135) */
+}
+.league-defenders-table {
+  background-color: rgb(0, 255, 135);
+}
+.league-midfilders-table {
+  background-color: rgb(5, 240, 255);
+}
+.league-striker-table{
+    background-color: rgb(233, 0, 82);
+    color: white;
+}

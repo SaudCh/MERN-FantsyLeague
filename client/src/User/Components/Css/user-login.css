@@ -1,0 +1,86 @@
+.login-custom-shapes-container{
+  position: relative;
+}
+.login-custom-shape-1 {
+  height: 40vh;
+  width: 20vw;
+  border-radius: 18% 82% 30% 70% / 37% 38% 62% 63%;
+  background-color: #1b7cbe;
+  opacity: 0.1;
+
+  position: absolute;
+  top: -80px;
+  left: -80px;
+}
+.login-custom-shape-2 {
+  height: 40vh;
+  width: 20vw;
+  border-radius: 18% 82% 30% 70% / 37% 38% 62% 63%;
+  background-color: #fe9117;
+  opacity: 0.1;
+
+  position: absolute;
+  z-index: 3;
+  bottom: -80px;
+  right: -80px;
+}
+.login-custom-shape-3 {
+  height: 40vh;
+  width: 20vw;
+  border-radius: 32% 68% 53% 47% / 47% 35% 65% 53%;
+  background-color: #fe9117;
+  opacity: 0.1;
+
+  position: absolute;
+  z-index: 3;
+  bottom: -80px;
+  right: -80px;
+}
+.user-login-left-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-logo {
+  width: 10vh;
+  margin-bottom: 50px;
+}
+.user-login-right-container {
+  background-color: rgba(255, 244, 232, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-custom-shape-4 {
+  height: 30vh;
+  width: 15vw;
+  border-radius: 32% 68% 68% 32% / 47% 35% 65% 53%;
+  background-color: rgba(254, 145, 23, 0.2);
+  position: relative;
+  z-index: 3;
+}
+.user-login-player-image {
+  height: 30vh;
+  position: absolute;
+  top: -50px;
+}
+.user-login-section{
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 786px) {
+  .login-custom-shape {
+    width: 40vw;
+    height: 30vh;
+    position: absolute;
+  }
+}
+@media screen and (max-width: 576px) {
+  .user-login-left-container {
+    background-color: rgba(255, 244, 232, 0.7);
+  }
+}

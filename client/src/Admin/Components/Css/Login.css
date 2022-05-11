@@ -1,0 +1,44 @@
+.admin-login-left-container {
+  height: 100vh;
+  background-color: #fe9117;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  color: white;
+}
+.admin-login-left-container h3 {
+  font-size: 40px;
+  font-weight: 500;
+}
+.admin-login-right-container {
+  display: flex;
+  align-items: center;
+}
+.admin-login-right-container form {
+  margin-right: 40;
+}
+.admin-login-button {
+  background-color: #fe9117;
+}
+.login-player-image {
+  width: 200px;
+}
+@media only screen and (max-width: 768px) {
+  .admin-login-right-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("https://wallpaper.dog/large/17048551.jpg");
+
+    color: white;
+  }
+}
