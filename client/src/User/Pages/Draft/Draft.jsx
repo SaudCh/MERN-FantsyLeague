@@ -3,10 +3,22 @@ import LoadingSpinner from "../../../Shared/Components/spinner";
 import Header from "../../Components/Header/Header";
 import DraftImg from "../../Components/Images/draft.png";
 import DraftData from "./draftData";
+import PlayerModal from "./playerModal";
 
 export default function Draft() {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [teamId, setTeamId] = useState("");
+
+  function openModal(id) {
+    setIsOpen(true);
+    setTeamId(id);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -57,14 +69,24 @@ export default function Draft() {
       </section>
 
       <section className="container-fluid mt-5 px-3 pb-5">
-        <h4 className="fw-bold">Draft</h4>
+        <h4 className="fw-bold">Global League</h4>
         <hr />
         <p>
           Take your turn to pick from the pool and build a 5-man squad unique to
           you.
         </p>
 
-        <DraftData users={users} setLoading={setLoading} />
+        <DraftData
+          users={users}
+          setLoading={setLoading}
+          openModal={openModal}
+        />
+        <PlayerModal
+          modalIsOpen={modalIsOpen}
+          closeModal={closeModal}
+          userId={teamId}
+          setLoading={setLoading}
+        />
       </section>
     </div>
   );

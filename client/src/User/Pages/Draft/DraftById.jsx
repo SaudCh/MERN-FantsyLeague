@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 export default function DraftById() {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
+  const [league, setLeague] = useState("");
 
   const { id } = useParams();
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function DraftById() {
         }
 
         setUsers(responseData.leagues.users);
-        console.log(responseData.leagues.users);
+        setLeague(responseData.leagues);
 
         setLoading(false);
       } catch (err) {
@@ -75,7 +76,7 @@ export default function DraftById() {
       </section>
 
       <section className="container-fluid mt-5 px-3 pb-5">
-        <h4 className="fw-bold">Draft</h4>
+        <h4 className="fw-bold">{league.name ? league.name : ""}</h4>
         <hr />
         <p>
           Use the Id for your friends to join {id}{" "}

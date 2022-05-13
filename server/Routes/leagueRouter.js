@@ -7,5 +7,6 @@ router.delete("/delete/:id", leagueController.deleteLeague);
 router.delete("/remove/:id/:user", leagueController.removeLeague);
 router.get("/join/:leagueId/:uid", leagueController.joinLeague);
 router.get("/view/:leagueId", leagueController.viewLeague);
+router.get("/viewall", leagueController.viewllLeagues);
 
 module.exports = router;

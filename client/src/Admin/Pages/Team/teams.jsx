@@ -14,7 +14,7 @@ function Teams() {
       try {
         setLoading(true);
         const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}team/viewall?populate=createdBy`,
+          `${process.env.REACT_APP_BACKEND_URL}league/viewall`,
           {
             method: "GET",
             headers: {
@@ -28,8 +28,7 @@ function Teams() {
           throw new Error(responseData.message);
         }
 
-        setTeams(responseData.data);
-        console.log(responseData.data);
+        setTeams(responseData.leagues);
 
         setLoading(false);
       } catch (err) {

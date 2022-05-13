@@ -11,6 +11,9 @@ import Header from "../Header/Header";
 import Leagues from "../../Pages/Leagues/Leagues";
 import Draft from "../../Pages/Draft/Draft";
 import DraftById from "../../Pages/Draft/DraftById";
+import FAQ from "../../Pages/FAQ/FAQ"
+import About from "../../Pages/About/About"
+import Rules from "../../Pages/Rules/Rules"
 
 export function LoggedOutUserRouter() {
   const adminContext = useContext(AdminAuthContext);
@@ -32,6 +35,15 @@ export function LoggedOutUserRouter() {
         </Route>
         <Route path="/draft" exact>
           <Draft />
+        </Route>
+        <Route path="/about" exact>
+          <About />
+        </Route>
+        <Route path="/faq" exact>
+          <FAQ />
+        </Route>
+        <Route path="/rule" exact>
+          <Rules />
         </Route>
         <Route path="/draft/:id" exact>
           <DraftById />
@@ -77,6 +89,15 @@ export function LoggedInUserRouter() {
         </Route>
         <Route path="/draft/:id" exact>
           <DraftById />
+        </Route>
+        <Route path="/about" exact>
+          <About />
+        </Route>
+        <Route path="/faq" exact>
+          <FAQ />
+        </Route>
+        <Route path="/rule" exact>
+          <Rules />
         </Route>
         <Redirect to="/error" />
       </Switch>

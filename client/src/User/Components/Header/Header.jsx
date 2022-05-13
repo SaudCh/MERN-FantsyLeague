@@ -66,9 +66,24 @@ function Header() {
                 Leagues
               </Link>
             </li>
-            <li class="nav-item me-4">
+            <li class="nav-item">
               <Link to="/draft" class="nav-link">
-                Draft
+                Global
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/about" class="nav-link">
+                About Us
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/faq" class="nav-link">
+                FAQ
+              </Link>
+            </li>
+            <li class="nav-item me-4">
+              <Link to="/rule" class="nav-link">
+                Rules
               </Link>
             </li>
           </ul>

@@ -105,7 +105,7 @@ function Login() {
                 onChange={(email) => setEmail(email.target.value)}
               />
             </div>
-            <div className="form-group mb-1">
+            <div className="form-group mb-3">
               {errors.password && <p className="errors">{errors.password}</p>}
 
               <input
@@ -116,7 +116,6 @@ function Login() {
                 onChange={(password) => setPassword(password.target.value)}
               />
             </div>
-            <p className="text-end p-0">Forget Password?</p>
             <center>
               <button
                 type="submit"

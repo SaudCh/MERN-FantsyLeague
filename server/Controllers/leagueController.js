@@ -62,6 +62,25 @@ const viewLeague = async (req, res, next) => {
     res.status(201).json({ leagues: leagues });
 };
 
+const viewllLeagues = async (req, res, next) => {
+    let leagues;
+    try {
+        leagues = await leagueSchema.find().populate("createdBy")
+    } catch (err) {
+        const error = new HttpError("League Fetch Failed", 500);
+        console.log(err);
+        return next(error);
+    }
+
+    if (!leagues) {
+        const error = new HttpError("No league Found", 500);
+        //console.log(err);
+        return next(error);
+    }
+
+    res.status(201).json({ leagues: leagues });
+};
+
 const deleteLeague = async (req, res, next) => {
     const leagueId = req.params.id;
     try {
@@ -112,3 +131,4 @@ exports.deleteLeague = deleteLeague
 exports.joinLeague = joinLeague
 exports.removeLeague = removeLeague
 exports.viewLeague = viewLeague
+exports.viewllLeagues = viewllLeagues

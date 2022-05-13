@@ -4,7 +4,7 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FirstPrize, SecPrize, ThirdPrize } from "./Images";
 
 export default function DraftData(props) {
-  const { users } = props;
+  const { users, openModal } = props;
 
   return (
     <section>
@@ -48,7 +48,7 @@ export default function DraftData(props) {
                   <td>
                     <button
                       className="btn btn-sm btn-primary"
-                      //   onClick={() => openPlayerModel()}
+                      onClick={() => openModal(user._id)}
                     >
                       <FontAwesomeIcon icon={faEye} />
                     </button>
