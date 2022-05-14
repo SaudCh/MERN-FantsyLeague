@@ -1,6 +1,7 @@
 import React from "react";
 import { LoggedInUserRouter, LoggedOutUserRouter } from "./User/Components/Router/User";
 import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.bundle"
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';

@@ -38,7 +38,7 @@ app.use((error, req, res, next) => {
     res.json({ message: error.message || "An unknown error occurred!" });
 });
 
-const uri = process.env.mongoURI || 'mongodb+srv://saud:1234@cluster0.l7gmh.mongodb.net/fantasyleague?retryWrites=true&w=majority'
+const uri = process.env.mongoURI || 'mongodb+srv://root:7ZJiz8k1InllMDjw@ifl.ckpe1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 mongoose
     .connect(`${uri}`)

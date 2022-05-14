@@ -6,11 +6,23 @@ import { Copy } from "../../Components/Icons";
 import DraftImg from "../../Components/Images/draft.png";
 import DraftData from "./draftData";
 import { toast } from "react-toastify";
+import PlayerModal from "./playerModal";
 
 export default function DraftById() {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
   const [league, setLeague] = useState("");
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [teamId, setTeamId] = useState("");
+
+  function openModal(id) {
+    setIsOpen(true);
+    setTeamId(id);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   const { id } = useParams();
   useEffect(() => {
@@ -85,7 +97,17 @@ export default function DraftById() {
           </button>
         </p>
 
-        <DraftData users={users} setLoading={setLoading} />
+        <DraftData
+          users={users}
+          setLoading={setLoading}
+          openModal={openModal}
+        />
+        <PlayerModal
+          modalIsOpen={modalIsOpen}
+          closeModal={closeModal}
+          userId={teamId}
+          setLoading={setLoading}
+        />
       </section>
     </div>
   );
