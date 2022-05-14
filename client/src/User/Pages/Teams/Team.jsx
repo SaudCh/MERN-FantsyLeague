@@ -68,7 +68,7 @@ function Team() {
       if (!response.ok) {
         throw new Error(responseData.message);
       }
-      setTeam(responseData.data);
+      setTeam(responseData.data ? responseData.data : "");
 
       setLoading(false);
     } catch (err) {
@@ -99,26 +99,10 @@ function Team() {
         <hr />
         <p>Select a maximum of 5 players from all available players</p>
 
-        <GoalKeeper
-          team={team}
-          fetchTeam={fetchTeam}
-          setLoading={setLoading}
-        />
-        <Defenders
-          team={team}
-          fetchTeam={fetchTeam}
-          setLoading={setLoading}
-        />
-        <MidFilders
-          team={team}
-          fetchTeam={fetchTeam}
-          setLoading={setLoading}
-        />
-        <Strikers
-          team={team}
-          fetchTeam={fetchTeam}
-          setLoading={setLoading}
-        />
+        <GoalKeeper team={team} fetchTeam={fetchTeam} setLoading={setLoading} />
+        <Defenders team={team} fetchTeam={fetchTeam} setLoading={setLoading} />
+        <MidFilders team={team} fetchTeam={fetchTeam} setLoading={setLoading} />
+        <Strikers team={team} fetchTeam={fetchTeam} setLoading={setLoading} />
       </section>
     </div>
   );

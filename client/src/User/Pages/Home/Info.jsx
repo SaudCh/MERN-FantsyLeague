@@ -31,7 +31,7 @@ function Info() {
         }
 
         console.log(responseData.data);
-        setTeam(responseData.data);
+        setTeam(responseData.data ? responseData.data : "");
 
         setLoading(false);
       } catch (err) {
