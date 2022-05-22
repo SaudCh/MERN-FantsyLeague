@@ -10,6 +10,9 @@ import Players from "../../Pages/Players/Player";
 import Teams from "../../Pages/Team/teams";
 import Squad from "../../Pages/Squad/Squad";
 
+//contain two routers 
+
+//if user is not log in
 export function LoggedOutAdminRouter() {
   let { path } = useRouteMatch();
 
@@ -22,6 +25,8 @@ export function LoggedOutAdminRouter() {
     </Switch>
   );
 }
+
+//if user us logged in
 export function LoggedInAdminRouter() {
   let { path } = useRouteMatch();
 

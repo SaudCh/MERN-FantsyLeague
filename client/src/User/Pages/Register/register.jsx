@@ -96,10 +96,14 @@ function Register() {
             className="col-10 col-sm-8 col-md-6 admin-register-form"
           >
             <img className="register-logo" src={Logo} alt="Logo" />
-            <h5>Register</h5>
+            <h5 style={{ color: "rgb(254, 145, 23)" }}>Register</h5>
             <p>
               Already have an account?{" "}
-              <Link className="link" to="/login">
+              <Link
+                className="link"
+                style={{ color: "rgb(11, 222, 141)" }}
+                to="/login"
+              >
                 Login
               </Link>
             </p>
@@ -164,10 +168,11 @@ function Register() {
           <div className="register-custom-shape register-custom-shape-4">
             <img src={Player} className="user-register-player-image" alt="" />
           </div>
-          <p className="p-0 col-8 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            sed iure unde et molestiae fugiat soluta deleniti ducimus neque
-            optio.
+          <p
+            className="p-0 col-8 text-center"
+            style={{ fontWeight: "bold", fontStyle: "italic" }}
+          >
+            Indian Fantasy League
           </p>
         </div>
       </div>

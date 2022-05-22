@@ -10,6 +10,7 @@ function Users() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
 
+  //fetch user api call
   const fetchUsers = async () => {
     try {
       setLoading(true);
@@ -41,6 +42,7 @@ function Users() {
     }
   };
 
+  //call the fetch user function when the page loads
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -76,6 +78,7 @@ function Users() {
     fetchUsers();
   }, []);
 
+  //delete user api call function
   const deleteUser = async (id) => {
     try {
       setLoading(true);

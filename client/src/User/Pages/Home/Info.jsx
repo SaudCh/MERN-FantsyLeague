@@ -153,8 +153,8 @@ function Info() {
       </div>
 
       <div
-        id="scoreaxis-widget-d8363"
-        className="mt-4"
+        id="scoreaxis-widget-4c02e"
+        className="mt-5"
         style={{
           borderWidth: 1,
           borderColor: "rgba(0, 0, 0, 0.15)",
@@ -166,15 +166,43 @@ function Info() {
         }}
       >
         <iframe
-          title="s"
+          title="isl"
           id="Iframe"
-          src="https://www.scoreaxis.com/widget/league-top-players/8?autoHeight=1&amp;inst=d8363"
+          src="https://www.scoreaxis.com/widget/league-top-players/1007?autoHeight=1&amp;inst=4c02e"
           style={{
             width: "100%",
             border: "none",
             transition: "all 300ms ease",
           }}
         ></iframe>
+      </div>
+
+      <div className="row align-items-center mt-5 pb-5">
+        <div className="col-12 col-md-6 d-flex align-ietms-center justify-content-center">
+          <img src={InfoImg2} style={{ width: "80%" }} alt="" />
+        </div>
+        <div className="col-12 col-md-6 text-center d-flex align-ietms-center justify-content-center mt-4 mt-md-0">
+          <div className="col-4 align-self-center">
+            <h4>
+              {isUserLoggedIn ? "View" : "Create"} Your Team
+              <br />
+              Now!
+            </h4>
+            <p>
+              Pick a squad of 5 players from the
+              <br />
+              Indian Super League to compete
+              <br />
+              globally and privately
+            </p>
+            <button
+              onClick={() => navigation("/team")}
+              className="btn btn-sm btn-primary"
+            >
+              {isUserLoggedIn ? "View Team" : "Create Team"}
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="row align-items-center mt-5">
@@ -189,30 +217,12 @@ function Info() {
               onClick={() => navigation("/league")}
               className="btn btn-sm btn-primary"
             >
-              {isUserLoggedIn ? "View Your League" : "Create Your League"}
+              Leagues
             </button>
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex align-ietms-center justify-content-center">
           <img src={InfoImg} style={{ width: "80%" }} alt="" />
-        </div>
-      </div>
-
-      <div className="row align-items-center mt-5 pb-5">
-        <div className="col-12 col-md-6 d-flex align-ietms-center justify-content-center">
-          <img src={InfoImg2} style={{ width: "80%" }} alt="" />
-        </div>
-        <div className="col-12 col-md-6 text-center d-flex align-ietms-center justify-content-center mt-4 mt-md-0">
-          <div className="col-4 align-self-center">
-            <h4>Pick Your Squad</h4>
-            <p>Pick a squad of 5 players from the Fantasy League.</p>
-            <button
-              onClick={() => navigation("/team")}
-              className="btn btn-sm btn-primary"
-            >
-              {isUserLoggedIn ? "View Your Team" : "Create Your Team"}
-            </button>
-          </div>
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+//login Validation check for any incorect data
 export const loginValidation = (data) => {
     let errors = {};
 

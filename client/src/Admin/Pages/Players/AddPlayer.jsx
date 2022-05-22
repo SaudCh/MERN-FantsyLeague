@@ -21,12 +21,14 @@ function AddPlayer(props) {
   const [points, setPoints] = useState(0);
   const [file, setFile] = useState();
 
+  //function calls when image is selected
   const handleChange = (e) => {
     if (e.target.files && e.target.files.length === 1) {
       setFile(e.target.files[0]);
     }
   };
 
+  //function to add player api call
   const addDetails = async (e) => {
     e.preventDefault();
 

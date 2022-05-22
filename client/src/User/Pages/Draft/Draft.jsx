@@ -61,7 +61,7 @@ export default function Draft() {
       <Header />
       <section className="row fansty-container m-0 p-0">
         <div className="col-6 d-flex justify-content-center align-items-center">
-          <h1 className="fansty-heading">Fantasy League</h1>
+          <h1 className="fansty-heading">Global League</h1>
         </div>
         <div className="col-6 d-flex justify-content-center align-items-center">
           <img src={DraftImg} className="league-image" alt="" />

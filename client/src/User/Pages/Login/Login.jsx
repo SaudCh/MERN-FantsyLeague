@@ -88,10 +88,14 @@ function Login() {
             className="col-10 col-sm-8 col-md-6 admin-login-form"
           >
             <img className="login-logo" src={Logo} alt="Logo" />
-            <h5>Login</h5>
+            <h5 style={{ color: "rgb(254, 145, 23)" }}>Login</h5>
             <p>
               Not have an Account?{" "}
-              <Link className="link" to="/register">
+              <Link
+                className="link"
+                to="/register"
+                style={{ color: "rgb(11, 222, 141)" }}
+              >
                 Register
               </Link>
             </p>
@@ -131,10 +135,11 @@ function Login() {
           <div className="login-custom-shape login-custom-shape-4">
             <img src={Player} className="user-login-player-image" alt="" />
           </div>
-          <p className="p-0 col-8 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            sed iure unde et molestiae fugiat soluta deleniti ducimus neque
-            optio.
+          <p
+            className="p-0 col-8 text-center"
+            style={{ fontWeight: "bold", fontStyle: "italic" }}
+          >
+            Indian Fantasy League
           </p>
         </div>
       </div>

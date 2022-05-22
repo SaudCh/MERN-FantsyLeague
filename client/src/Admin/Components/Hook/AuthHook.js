@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 
+//custom authentication hook for admin login 
 export const useAdminAuth = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [adminId, setAdminId] = useState(false);

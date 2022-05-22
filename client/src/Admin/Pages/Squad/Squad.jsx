@@ -21,6 +21,7 @@ function Squad() {
   const [updateModal, setUpdateModal] = useState(false);
   const [response, setResponse] = useState("");
 
+  //function to api call to fetch player
   const fetchPlayers = async () => {
     try {
       setLoading(true);
@@ -61,6 +62,7 @@ function Squad() {
     }
   };
 
+  //delete player api call
   const deletePlayer = async (id) => {
     try {
       setLoading(true);
@@ -111,6 +113,7 @@ function Squad() {
     }
   };
 
+  //open and close function to open add squad modal
   function openAddModel() {
     setAddModal(true);
   }
@@ -120,6 +123,7 @@ function Squad() {
     fetchPlayers();
   }
 
+  //open and close function for update modal
   function openUpdateModel(res) {
     setResponse(res);
     setUpdateModal(true);
@@ -130,6 +134,7 @@ function Squad() {
     fetchPlayers();
   }
 
+  //fetch squad when the page loads
   useEffect(() => {
     const fetchPlayers = async () => {
       try {

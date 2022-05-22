@@ -16,6 +16,9 @@ function Login() {
   const [errors, setErrors] = useState("");
   const [loading, setLoading] = useState(false);
 
+  //call login api to authenticate admin 
+  //first check for any errors
+  //then call the login api
   const loginHandle = async (e) => {
     e.preventDefault();
 

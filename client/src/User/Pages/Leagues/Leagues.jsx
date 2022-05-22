@@ -82,10 +82,10 @@ export default function Leagues() {
       <Header />
       <section className="row fansty-container m-0 p-0">
         <div className="col-6 d-flex justify-content-center align-items-center">
-          <h1 className="fansty-heading">Fantasy League</h1>
+          <img src={LeagueImg} className="league-image" alt="" />
         </div>
         <div className="col-6 d-flex justify-content-center align-items-center">
-          <img src={LeagueImg} className="league-image" alt="" />
+          <h1 className="fansty-heading">Private Leagues</h1>
         </div>
       </section>
 

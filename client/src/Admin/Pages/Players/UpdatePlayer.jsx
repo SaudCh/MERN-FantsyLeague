@@ -19,12 +19,14 @@ function UpdatePlayer(props) {
   const [team, setTeam] = useState(res.team);
   const [position, setPosition] = useState(res.position);
 
+  //updates player info when the modal opens
   useEffect(() => {
     setName(res.name);
     setTeam(res.team);
     setPosition(res.position);
   }, [res]);
 
+  //update player api call
   const updateplayer = async (e) => {
     e.preventDefault();
 

@@ -17,10 +17,12 @@ function UpdatePoints(props) {
   const { modalIsOpen, closeModal, res } = props;
   const [points, setPoints] = useState();
 
+  //update points whenever the point modal open
   useEffect(() => {
     setPoints(res.points);
   }, [res]);
 
+  //function to update points
   const updatePoints = async (e) => {
     e.preventDefault();
 

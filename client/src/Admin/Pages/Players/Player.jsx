@@ -25,6 +25,7 @@ function Players() {
   const [pointModal, setPointModal] = useState(false);
   const [response, setResponse] = useState("");
 
+  //function to call api 
   const fetchPlayers = async () => {
     try {
       setLoading(true);
@@ -65,6 +66,7 @@ function Players() {
     }
   };
 
+  //function to delete player api call through player id
   const deletePlayer = async (id) => {
     try {
       setLoading(true);
@@ -115,6 +117,7 @@ function Players() {
     }
   };
 
+  //open and close modal to add player
   function openAddModel() {
     setAddModal(true);
   }
@@ -124,6 +127,7 @@ function Players() {
     fetchPlayers();
   }
 
+  //open and close function to open update player info modal
   function openUpdateModel(res) {
     setResponse(res);
     setUpdateModal(true);
@@ -134,6 +138,7 @@ function Players() {
     fetchPlayers();
   }
 
+  //open and close function to point modals
   function oPointModal(res) {
     setResponse(res);
     setPointModal(true);
@@ -144,6 +149,7 @@ function Players() {
     fetchPlayers();
   }
 
+  //useEffect call the fetch player function when ever the page loads
   useEffect(() => {
     const fetchPlayers = async () => {
       try {

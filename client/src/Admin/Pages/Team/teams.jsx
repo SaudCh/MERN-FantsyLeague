@@ -10,6 +10,7 @@ function Teams() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
 
+  //function to fetch leagues
   const fetchLeagues = async () => {
     try {
       setLoading(true);
@@ -41,6 +42,7 @@ function Teams() {
     }
   };
 
+  //deletes league api call funtion
   const deleteLeague = async (id) => {
     try {
       setLoading(true);
@@ -91,6 +93,7 @@ function Teams() {
     }
   };
 
+  //call the fetch Leagues function when the page loads
   useEffect(() => {
     const fetchLeagues = async () => {
       try {

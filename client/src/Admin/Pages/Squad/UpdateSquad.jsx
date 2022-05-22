@@ -23,6 +23,7 @@ function UpdatePlayer(props) {
   const [gd, setGd] = useState(0);
   const [points, setPoints] = useState(0);
 
+  //update squad info when ever the page loads
   useEffect(() => {
     setName(res.name);
     setGames(res.gamesPlayed);
@@ -33,6 +34,7 @@ function UpdatePlayer(props) {
     setPoints(res.points);
   }, [res]);
 
+  //update player function api call
   const updateplayer = async (e) => {
     e.preventDefault();
 

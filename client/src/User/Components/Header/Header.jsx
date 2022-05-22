@@ -28,7 +28,7 @@ function Header() {
     >
       <div class="container-fluid">
         <Link to="/" class="navbar-brand">
-          FantsyLeague
+          Indian Fantasy League
         </Link>
         <button
           class="navbar-toggler"
@@ -44,11 +44,11 @@ function Header() {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <Link to="/" class="nav-link active" aria-current="page">
+              <Link to="/" class="nav-link text-white" aria-current="page">
                 Home
               </Link>
             </li>
-            <li class="nav-item">
+            <li class="nav-item  text-white">
               <Link
                 to={isUserLoggedIn ? "/team" : "/login"}
                 class="nav-link active"
@@ -76,22 +76,22 @@ function Header() {
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/draft" class="nav-link">
+              <Link to="/draft" class="nav-link text-white">
                 Global
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/about" class="nav-link">
+              <Link to="/about" class="nav-link text-white">
                 About Us
               </Link>
             </li>
             <li class="nav-item">
-              <Link to="/faq" class="nav-link">
+              <Link to="/faq" class="nav-link text-white">
                 FAQ
               </Link>
             </li>
             <li class="nav-item me-4">
-              <Link to="/rule" class="nav-link">
+              <Link to="/rule" class="nav-link text-white">
                 Rules
               </Link>
             </li>
