@@ -2,6 +2,7 @@ const leagueSchema = require("../Model/LeagueSchema");
 const userSchema = require("../Model/userSchema");
 const HttpError = require("../Model/HttpError")
 
+//create league
 const createLeague = async (req, res, next) => {
     const { userId, name } = req.body;
 
@@ -23,6 +24,7 @@ const createLeague = async (req, res, next) => {
     res.status(201).json({ message: "League Creation Success" });
 };
 
+//join freinds league
 const joinLeague = async (req, res, next) => {
     const { leagueId, uid } = req.params;
 
@@ -41,6 +43,7 @@ const joinLeague = async (req, res, next) => {
     res.status(201).json({ message: "League Join Success" });
 };
 
+//view Leagues by id
 const viewLeague = async (req, res, next) => {
     const { leagueId } = req.params;
 
@@ -62,6 +65,7 @@ const viewLeague = async (req, res, next) => {
     res.status(201).json({ leagues: leagues });
 };
 
+//View all leagues
 const viewllLeagues = async (req, res, next) => {
     let leagues;
     try {
@@ -81,6 +85,7 @@ const viewllLeagues = async (req, res, next) => {
     res.status(201).json({ leagues: leagues });
 };
 
+//delete league
 const deleteLeague = async (req, res, next) => {
     const leagueId = req.params.id;
     try {
@@ -108,6 +113,8 @@ const deleteLeague = async (req, res, next) => {
     res.status(201).json({ message: "League Deleted" });
 }
 
+
+//remove friends league
 const removeLeague = async (req, res, next) => {
     const leagueId = req.params.id;
     try {
@@ -126,6 +133,7 @@ const removeLeague = async (req, res, next) => {
     res.status(201).json({ message: "League Removed" });
 }
 
+//exports above function
 exports.createLeague = createLeague
 exports.deleteLeague = deleteLeague
 exports.joinLeague = joinLeague

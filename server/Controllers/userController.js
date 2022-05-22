@@ -2,6 +2,7 @@ const userschema = require("../Model/userSchema");
 const HttpError = require("../Model/HttpError");
 const teamSchema = require("../Model/teamSchema")
 
+//register new user
 const register = async (req, res, next) => {
     const { name, password, email } = req.body;
 
@@ -56,6 +57,7 @@ const register = async (req, res, next) => {
     res.status(201).json({ message: "Signup Success" });
 };
 
+//auth user
 const login = async (req, res, next) => {
     let user;
 
@@ -81,6 +83,7 @@ const login = async (req, res, next) => {
 
 };
 
+//view user by user id
 const getUser = async (req, res, next) => {
     let user;
 
@@ -97,11 +100,12 @@ const getUser = async (req, res, next) => {
     res.status(201).json({ user });
 }
 
+//view all users
 const getAllUser = async (req, res, next) => {
     let users;
 
     try {
-        users = await userschema.find({}, 'name points team').populate('team').sort({ points: -1 });
+        users = await userschema.find({}, 'name points team email').populate('team').sort({ points: -1 });
     } catch (err) {
         const error = new HttpError("Could not find", 500);
         return next(error);
@@ -110,6 +114,7 @@ const getAllUser = async (req, res, next) => {
     res.status(201).json({ data: users });
 }
 
+//update user by user id
 const updateUser = async (req, res, next) => {
     // //console.log(req.body)
     const { userid, name, phone, address } = req.body;
@@ -127,6 +132,7 @@ const updateUser = async (req, res, next) => {
     res.json({ message: "User Info Updated Successfully" });
 }
 
+//delete user
 const deleteUser = async (req, res, next) => {
     // //console.log(req.body)
     try {

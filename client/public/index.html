@@ -39,6 +39,23 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        window.addEventListener(
+          "message",
+          (event) => {
+            if (event.data.appHeight && "d8363" == event.data.inst) {
+              let container = document.querySelector(
+                "#scoreaxis-widget-d8363 iframe"
+              );
+              container &&
+                (container.style.height =
+                  parseInt(event.data.appHeight) + "px");
+            }
+          },
+          !1
+        );
+      });
+    </script>
   </body>
 </html>

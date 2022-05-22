@@ -1,6 +1,7 @@
 const adminSchema = require("../Model/adminSchema");
 const HttpError = require("../Model/HttpError")
 
+//to add admin
 const register = async (req, res, next) => {
 
     const { email, password } = req.body;
@@ -21,6 +22,7 @@ const register = async (req, res, next) => {
 
 };
 
+//to auth admin
 const login = async (req, res, next) => {
 
     let admin;
@@ -49,6 +51,7 @@ const login = async (req, res, next) => {
 
 };
 
+//to update admin password
 const updatePassword = async (req, res, next) => {
     // //console.log(req.body)
     const { userid, password, cpassword } = req.body;

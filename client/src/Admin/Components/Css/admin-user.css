@@ -1,8 +1,26 @@
 .admin-user-table {
   border-radius: 12px;
-  height: 60vh;
+  height: 80vh;
   box-shadow: 1px 1px 3px;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
+}
+.admin-user-table::-webkit-scrollbar {
+  width: 3px;
+}
+
+.admin-user-table::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 .inp-container {
   display: flex;
@@ -25,6 +43,6 @@
 .adm-heading-container {
   margin: 10px 0 10px 10px;
 }
-.ad-data-detail{
+.ad-data-detail {
   margin: 5px;
 }

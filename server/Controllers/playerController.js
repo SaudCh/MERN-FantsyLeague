@@ -3,6 +3,7 @@ const userSchema = require("../Model/userSchema");
 const teamSchema = require("../Model/teamSchema");
 const HttpError = require("../Model/HttpError")
 
+//Create new Player
 const addPlayer = async (req, res, next) => {
     const { name, position, team, points } = req.body;
 
@@ -29,6 +30,7 @@ const addPlayer = async (req, res, next) => {
     res.status(201).json({ message: "New Player Added" });
 };
 
+//get player by player Id
 const getPlayerById = async (req, res, next) => {
     let user;
 
@@ -45,6 +47,7 @@ const getPlayerById = async (req, res, next) => {
     res.status(201).json({ user });
 }
 
+//get All players
 const getAllPlayers = async (req, res, next) => {
     let users;
 
@@ -58,6 +61,8 @@ const getAllPlayers = async (req, res, next) => {
     res.status(201).json({ data: users });
 }
 
+
+//update player points
 const updatePoints = async (req, res, next) => {
     const { uid, prevPoint, currpoints } = req.body;
     const newPoint = currpoints - prevPoint
@@ -92,6 +97,7 @@ const updatePoints = async (req, res, next) => {
     res.json({ message: "Player Points Updated" });
 }
 
+//update player info
 const updatePlayer = async (req, res, next) => {
     const { uid, name, position, team } = req.body;
     //console.log(req.body);
@@ -109,6 +115,8 @@ const updatePlayer = async (req, res, next) => {
     res.json({ message: "Player Info Updated" });
 }
 
+
+//delete player
 const deletePlayer = async (req, res, next) => {
     // console.log(req.body)
     try {
@@ -121,6 +129,7 @@ const deletePlayer = async (req, res, next) => {
     res.json({ message: "Player Deleted" });
 }
 
+//export above function
 exports.addPlayer = addPlayer;
 exports.getPlayerById = getPlayerById;
 exports.getAllPlayers = getAllPlayers;

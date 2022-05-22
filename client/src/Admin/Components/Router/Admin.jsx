@@ -8,6 +8,7 @@ import SideBar from "../SideBar/SideBar";
 import "../Css/admin-sidebar.css";
 import Players from "../../Pages/Players/Player";
 import Teams from "../../Pages/Team/teams";
+import Squad from "../../Pages/Squad/Squad";
 
 export function LoggedOutAdminRouter() {
   let { path } = useRouteMatch();
@@ -42,7 +43,9 @@ export function LoggedInAdminRouter() {
           <Route exact path={`${path}/players`}>
             <Players />
           </Route>
-
+          <Route exact path={`${path}/squad`}>
+            <Squad />
+          </Route>
           <Route path={`${path}/error`} exact>
             <div className="error-404">
               <h1>404 Not Found</h1>

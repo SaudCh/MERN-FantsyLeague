@@ -67,6 +67,15 @@ function Header() {
               </Link>
             </li>
             <li class="nav-item">
+              <Link
+                to={"/standing"}
+                class="nav-link active"
+                aria-current="page"
+              >
+                Standings
+              </Link>
+            </li>
+            <li class="nav-item">
               <Link to="/draft" class="nav-link">
                 Global
               </Link>

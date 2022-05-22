@@ -59,7 +59,7 @@ function Users() {
         if (!response.ok) {
           throw new Error(responseData.message);
         }
-
+        console.log(responseData)
         setUsers(responseData.data);
 
         setLoading(false);

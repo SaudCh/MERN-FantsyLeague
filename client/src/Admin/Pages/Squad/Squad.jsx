@@ -1,20 +1,31 @@
 import React, { useEffect, useState } from "react";
 import "../../Components/Css/admin-user.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faTrash } from "@fortawesome/free-solid-svg-icons";
-import LoadingSpinner from "../../../Shared/Components/spinner";
-import { toast } from "react-toastify";
+import {
+  faPenToSquare,
+  faSearch,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 
-function Teams() {
-  const [teams, setTeams] = useState([]);
+import LoadingSpinner from "../../../Shared/Components/spinner";
+import AddSquad from "./AddSquad";
+import { toast } from "react-toastify";
+import UpdateSquad from "./UpdateSquad";
+import Modal from "react-modal";
+
+function Squad() {
+  const [squads, setSquads] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
+  const [addModal, setAddModal] = useState(false);
+  const [updateModal, setUpdateModal] = useState(false);
+  const [response, setResponse] = useState("");
 
-  const fetchLeagues = async () => {
+  const fetchPlayers = async () => {
     try {
       setLoading(true);
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}league/viewall`,
+        `${process.env.REACT_APP_BACKEND_URL}squad/viewall`,
         {
           method: "GET",
           headers: {
@@ -28,7 +39,7 @@ function Teams() {
         throw new Error(responseData.message);
       }
 
-      setTeams(responseData.leagues);
+      setSquads(responseData.squad);
 
       setLoading(false);
     } catch (err) {
@@ -36,16 +47,25 @@ function Teams() {
 
       let errs = {};
       errs.api = err.message || "Something went wrong, please try again.";
-      //console.log(err.message);
+      // //console.log(err.message);
       //setErrors(errs)
+      toast.error(errs.api, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
-  const deleteLeague = async (id) => {
+  const deletePlayer = async (id) => {
     try {
       setLoading(true);
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}league/delete/${id}`,
+        `${process.env.REACT_APP_BACKEND_URL}squad/delete/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -69,7 +89,7 @@ function Teams() {
         progress: undefined,
       });
 
-      fetchLeagues();
+      fetchPlayers();
 
       setLoading(false);
     } catch (err) {
@@ -91,12 +111,31 @@ function Teams() {
     }
   };
 
+  function openAddModel() {
+    setAddModal(true);
+  }
+
+  function closeAddModal() {
+    setAddModal(false);
+    fetchPlayers();
+  }
+
+  function openUpdateModel(res) {
+    setResponse(res);
+    setUpdateModal(true);
+  }
+
+  function closeUpdateModal() {
+    setUpdateModal(false);
+    fetchPlayers();
+  }
+
   useEffect(() => {
-    const fetchLeagues = async () => {
+    const fetchPlayers = async () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}league/viewall`,
+          `${process.env.REACT_APP_BACKEND_URL}squad/viewall`,
           {
             method: "GET",
             headers: {
@@ -110,7 +149,8 @@ function Teams() {
           throw new Error(responseData.message);
         }
 
-        setTeams(responseData.leagues);
+        setSquads(responseData.squad);
+        console.log(responseData.squad);
 
         setLoading(false);
       } catch (err) {
@@ -123,15 +163,23 @@ function Teams() {
       }
     };
 
-    fetchLeagues();
+    fetchPlayers();
   }, []);
 
   return (
     <div className="col-9 bg-white admin-user-table">
+      {Modal.setAppElement("body")}
       {loading && <LoadingSpinner asOverlay />}
-
       <div className="adm-heading-container">
-        <span className="adm-us-heading">Leagues</span>
+        <div className="d-flex align-items-center justify-content-between">
+          <span className="adm-us-heading">Squad</span>
+          <button
+            className="btn btn-sm btn-primary me-4"
+            onClick={openAddModel}
+          >
+            Add
+          </button>
+        </div>
       </div>
       <div className="inp-container border">
         <input
@@ -150,12 +198,13 @@ function Teams() {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
-              <th scope="col">Created By</th>
+              <th scope="col">Games Played</th>
+              <th scope="col">Points</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            {teams
+            {squads
               .filter((val) =>
                 val.name.toLowerCase().includes(search.toLowerCase())
               )
@@ -164,11 +213,18 @@ function Teams() {
                   <tr>
                     <th scope="row">{index + 1}</th>
                     <td>{res.name}</td>
-                    <td>{res.createdBy.name}</td>
+                    <td>{res.gamesPlayed}</td>
+                    <td>{res.points}</td>
                     <td>
                       <button
+                        className="btn btn-sm btn-primary"
+                        onClick={() => openUpdateModel(res)}
+                      >
+                        <FontAwesomeIcon icon={faPenToSquare} />
+                      </button>
+                      <button
                         className="btn btn-sm btn-danger ms-2"
-                        onClick={() => deleteLeague(res._id)}
+                        onClick={() => deletePlayer(res._id)}
                       >
                         <FontAwesomeIcon icon={faTrash} />
                       </button>
@@ -179,8 +235,14 @@ function Teams() {
           </tbody>
         </table>
       </div>
+      <AddSquad modalIsOpen={addModal} closeModal={closeAddModal} />
+      <UpdateSquad
+        modalIsOpen={updateModal}
+        closeModal={closeUpdateModal}
+        res={response}
+      />
     </div>
   );
 }
 
-export default Teams;
+export default Squad;

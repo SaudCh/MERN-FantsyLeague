@@ -14,6 +14,7 @@ import DraftById from "../../Pages/Draft/DraftById";
 import FAQ from "../../Pages/FAQ/FAQ"
 import About from "../../Pages/About/About"
 import Rules from "../../Pages/Rules/Rules"
+import Standing from "../../Pages/Standings/Standing";
 
 export function LoggedOutUserRouter() {
   const adminContext = useContext(AdminAuthContext);
@@ -32,6 +33,9 @@ export function LoggedOutUserRouter() {
         </Route>
         <Route path="/register" exact>
           <Register />
+        </Route>
+        <Route path="/standing" exact>
+          <Standing />
         </Route>
         <Route path="/draft" exact>
           <Draft />
@@ -80,6 +84,9 @@ export function LoggedInUserRouter() {
         </Route>
         <Route path="/team" exact>
           <Team />
+        </Route>
+        <Route path="/standing" exact>
+          <Standing />
         </Route>
         <Route path="/league" exact>
           <Leagues />

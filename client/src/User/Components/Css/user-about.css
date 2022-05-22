@@ -1,0 +1,14 @@
+.about-heading {
+  font-size: 20px;
+  color: #000;
+}
+.about-subheading {
+  font-size: 15px;
+  color: #000;
+  opacity: 0.75;
+}
+.about-paragraph {
+  font-size: 13px;
+  color: #000;
+  opacity: 0.6;
+}

@@ -152,10 +152,35 @@ function Info() {
         </div>
       </div>
 
+      <div
+        id="scoreaxis-widget-d8363"
+        className="mt-4"
+        style={{
+          borderWidth: 1,
+          borderColor: "rgba(0, 0, 0, 0.15)",
+          borderStyle: "solid",
+          borderRadius: 8,
+          padding: 10,
+          background: "rgb(255, 255, 255)",
+          width: "100%",
+        }}
+      >
+        <iframe
+          title="s"
+          id="Iframe"
+          src="https://www.scoreaxis.com/widget/league-top-players/8?autoHeight=1&amp;inst=d8363"
+          style={{
+            width: "100%",
+            border: "none",
+            transition: "all 300ms ease",
+          }}
+        ></iframe>
+      </div>
+
       <div className="row align-items-center mt-5">
         <div className="col-12 col-md-6 text-center d-flex align-ietms-center justify-content-center mt-4 mt-md-0">
           <div className="col-4 align-self-center">
-            <h4>Create Your Leagues</h4>
+            <h4>{isUserLoggedIn ? "View" : "Create"} Your Leagues</h4>
             <p>
               Play against friends and family, colleagues or a web community in
               invitational leagues and cups.
@@ -164,7 +189,7 @@ function Info() {
               onClick={() => navigation("/league")}
               className="btn btn-sm btn-primary"
             >
-              Create Your League
+              {isUserLoggedIn ? "View Your League" : "Create Your League"}
             </button>
           </div>
         </div>
@@ -180,12 +205,12 @@ function Info() {
         <div className="col-12 col-md-6 text-center d-flex align-ietms-center justify-content-center mt-4 mt-md-0">
           <div className="col-4 align-self-center">
             <h4>Pick Your Squad</h4>
-            <p>Pick a squad of 5 players from the Premier League.</p>
+            <p>Pick a squad of 5 players from the Fantasy League.</p>
             <button
               onClick={() => navigation("/team")}
               className="btn btn-sm btn-primary"
             >
-              Create Your Team
+              {isUserLoggedIn ? "View Your Team" : "Create Your Team"}
             </button>
           </div>
         </div>

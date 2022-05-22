@@ -61,6 +61,12 @@ function SideBar() {
             <span>Players</span>
           </Link>
         </li>
+        <li>
+          <Link to={`${url}/squad`} className="ad-sb-link">
+            <FontAwesomeIcon icon={faVolleyball} />
+            <span>Squad</span>
+          </Link>
+        </li>
       </ul>
       <ul className="ad-sb-menu logout-menu">
         <li>
