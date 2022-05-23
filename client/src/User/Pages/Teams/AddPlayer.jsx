@@ -7,11 +7,12 @@ import { toast } from "react-toastify";
 const customStyles = {
   content: {
     top: "50%",
-    left: "50%",
-    right: "auto",
+    left: "49%",
+    right: "10%",
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    marginVertical: 10,
   },
 };
 
@@ -21,6 +22,8 @@ export default function AddGoalKeeper(props) {
   const [player, setPlayer] = useState();
   const [search, setSearch] = useState("");
   const [allPlayers, setAllPlayers] = useState([]);
+  const [teams, setTeams] = useState([]);
+  const [selTeam, setSelTeam] = useState("");
 
   useEffect(() => {
     const fetchPlayers = async () => {
@@ -54,7 +57,39 @@ export default function AddGoalKeeper(props) {
       }
     };
 
+    const fetchTeams = async () => {
+      try {
+        //setLoading(true);
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}player/getTeams`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const responseData = await response.json();
+
+        if (!response.ok) {
+          throw new Error(responseData.message);
+        }
+
+        setTeams(responseData.teams);
+
+        // setLoading(false);
+      } catch (err) {
+        // setLoading(false);
+
+        let errs = {};
+        errs.api = err.message || "Something went wrong, please try again.";
+        console.log(err.message);
+        //setErrors(errs)
+      }
+    };
+
     fetchPlayers();
+    fetchTeams();
   }, []);
 
   const updatePlayer = async () => {
@@ -111,23 +146,38 @@ export default function AddGoalKeeper(props) {
       style={customStyles}
       contentLabel="Example Modal"
     >
-      <div className="inp-container border mb-4">
-        <input
-          className="search-inp"
-          placeholder="Search"
-          onChange={(query) => setSearch(query.target.value)}
-          type="text"
-          name=""
-          id=""
-        />
-        <FontAwesomeIcon icon={faSearch} />
+      <div className="d-flex">
+        <div className="inp-container border mb-4" style={{ width: "100%" }}>
+          <input
+            className="search-inp"
+            placeholder="Search"
+            onChange={(query) => setSearch(query.target.value)}
+            type="text"
+            name=""
+            id=""
+          />
+          <FontAwesomeIcon icon={faSearch} />
+        </div>
+        <select
+          class="form-select"
+          style={{ width: 180, height: 40 }}
+          onChange={(e) => setSelTeam(e.target.value)}
+        >
+          <option selected value="">
+            Teams
+          </option>
+          {teams.map((e) => (
+            <option value={e}>{e}</option>
+          ))}
+        </select>
       </div>
       <form action="" className="row" style={{ minWidth: "50vw" }}>
         {allPlayers
           .filter(
             (val) =>
               val.position.toLowerCase().includes(cat.toLowerCase()) &&
-              val.name.toLowerCase().includes(search.toLowerCase())
+              val.name.toLowerCase().includes(search.toLowerCase()) &&
+              val.team.toLowerCase().includes(selTeam.toLowerCase())
           )
           .map((e) => (
             <div class="form-check col-4 my-1">

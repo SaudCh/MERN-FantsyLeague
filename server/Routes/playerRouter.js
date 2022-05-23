@@ -9,5 +9,6 @@ router.patch("/updatepoints", playerController.updatePoints);
 router.delete("/delete/:id", playerController.deletePlayer);
 router.get("/getById/:id", playerController.getPlayerById);
 router.get("/viewall", playerController.getAllPlayers);
+router.get("/getTeams", playerController.getTeams);
 
 module.exports = router;

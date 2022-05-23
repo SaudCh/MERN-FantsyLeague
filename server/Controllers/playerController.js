@@ -61,6 +61,18 @@ const getAllPlayers = async (req, res, next) => {
     res.status(201).json({ data: users });
 }
 
+const getTeams = async (req, res, next) => {
+    let users;
+
+    try {
+        users = await playerSchema.find().distinct('team');
+    } catch (err) {
+        const error = new HttpError("Could not find", 500);
+        return next(error);
+    }
+
+    res.status(201).json({ teams: users });
+}
 
 //update player points
 const updatePoints = async (req, res, next) => {
@@ -136,3 +148,4 @@ exports.getAllPlayers = getAllPlayers;
 exports.updatePlayer = updatePlayer;
 exports.deletePlayer = deletePlayer;
 exports.updatePoints = updatePoints;
+exports.getTeams = getTeams;
