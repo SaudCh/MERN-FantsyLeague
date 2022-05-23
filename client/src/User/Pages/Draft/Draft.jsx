@@ -11,6 +11,7 @@ export default function Draft() {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [teamId, setTeamId] = useState("");
 
+  //open team modal
   function openModal(id) {
     setIsOpen(true);
     setTeamId(id);
@@ -20,6 +21,7 @@ export default function Draft() {
     setIsOpen(false);
   }
 
+  //call fetch user function when the app loads
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -81,6 +83,8 @@ export default function Draft() {
           setLoading={setLoading}
           openModal={openModal}
         />
+
+        {/* modal */}
         <PlayerModal
           modalIsOpen={modalIsOpen}
           closeModal={closeModal}

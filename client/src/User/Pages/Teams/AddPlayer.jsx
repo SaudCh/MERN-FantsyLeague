@@ -16,7 +16,8 @@ const customStyles = {
   },
 };
 
-export default function AddGoalKeeper(props) {
+//Add player to the caegory depending on which compnent open the modal
+export default function AddPlayer(props) {
   const { modalIsOpen, closeModal, team, cat } = props;
 
   const [player, setPlayer] = useState();

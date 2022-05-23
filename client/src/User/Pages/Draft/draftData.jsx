@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FirstPrize, SecPrize, ThirdPrize } from "./Images";
 
+//gets users from Draft.jsx and DraftById.jsx 
+//and map it in the table
 export default function DraftData(props) {
   const { users, openModal } = props;
 

@@ -5,6 +5,7 @@ import AddPlayer from "./AddPlayer";
 import { toast } from "react-toastify";
 import PlayerInfo from "./PlayerInfo";
 
+//print Mid fielders data on screen and also open add player modal
 function GoalKeeper(props) {
   const { team, fetchTeam, setLoading } = props;
 
@@ -85,10 +86,18 @@ function GoalKeeper(props) {
           <thead className="league-midfilders-table">
             <tr>
               <th scope="col">#</th>
-              <th scope="col" style={{ width: "50%" }}>Mid Fielder</th>
-              <th scope="col" style={{ width: "15%" }}>Team</th>
-              <th scope="col" style={{ width: "15%" }}>Points</th>
-              <th scope="col" style={{ width: "15%" }}>Action</th>
+              <th scope="col" style={{ width: "50%" }}>
+                Mid Fielder
+              </th>
+              <th scope="col" style={{ width: "15%" }}>
+                Team
+              </th>
+              <th scope="col" style={{ width: "15%" }}>
+                Points
+              </th>
+              <th scope="col" style={{ width: "15%" }}>
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>

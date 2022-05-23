@@ -13,6 +13,8 @@ const customStyles = {
   },
 };
 
+//modal to print team data
+//can be opened from draft.jsx and draftById.jsx
 export default function PlayerModal(props) {
   const { modalIsOpen, closeModal, userId, setLoading } = props;
   const [team, setTeam] = useState("");

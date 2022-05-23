@@ -15,6 +15,7 @@ export default function DraftById() {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [teamId, setTeamId] = useState("");
 
+  //team modeal open and close function
   function openModal(id) {
     setIsOpen(true);
     setTeamId(id);
@@ -24,7 +25,10 @@ export default function DraftById() {
     setIsOpen(false);
   }
 
+  //fetch id from url
   const { id } = useParams();
+
+  //get leagues by league id
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -61,6 +65,7 @@ export default function DraftById() {
     fetchUsers();
   }, [id]);
 
+  //copy league id to clipboard
   const copytoclip = () => {
     navigator.clipboard.writeText(id);
     toast.success("Copy to clipboard", {

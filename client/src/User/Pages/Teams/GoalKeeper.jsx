@@ -5,6 +5,7 @@ import AddPlayer from "./AddPlayer";
 import { toast } from "react-toastify";
 import PlayerInfo from "./PlayerInfo";
 
+//print goal keeper data on screen and also open add player modal
 function GoalKeeper(props) {
   const { team, fetchTeam, setLoading } = props;
 

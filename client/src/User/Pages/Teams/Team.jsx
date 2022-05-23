@@ -9,6 +9,8 @@ import Strikers from "./Strikers";
 import { useChkUserAuth } from "../../Components/Hooks/chkAuth";
 import LoadingSpinner from "../../../Shared/Components/spinner";
 
+//gets user id from custom chkuserAuth and from that id fetch user detail from backend
+//pass the data to striker,goal keeper,mid filder,defenders
 function Team() {
   const [loading, setLoading] = useState(false);
   const [team, setTeam] = useState("");

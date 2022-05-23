@@ -5,6 +5,7 @@ import AddPlayer from "./AddPlayer";
 import { toast } from "react-toastify";
 import PlayerInfo from "./PlayerInfo";
 
+//print defenders data on screen and also open add player modal
 function Defenders(props) {
   const { team, fetchTeam, setLoading } = props;
 

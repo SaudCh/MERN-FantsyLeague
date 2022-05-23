@@ -13,6 +13,8 @@ const customStyles = {
   },
 };
 
+// gets data from Leagues.jsx of join leagues of friends and map it
+// also contain button to open join league modal
 export default function CreateLeagueModal(props) {
   const { modalIsOpen, closeModal, userId, fetchLeague } = props;
 

@@ -5,6 +5,8 @@ import AddPlayer from "./AddPlayer";
 import { toast } from "react-toastify";
 import PlayerInfo from "./PlayerInfo";
 
+//print strikers data on screen and also open add player modal
+//also pass data to player info
 function Strikers(props) {
   const { team, fetchTeam, setLoading } = props;
 
@@ -153,9 +155,15 @@ function Strikers(props) {
               <th scope="col" style={{ width: "50%" }}>
                 Strikers
               </th>
-              <th scope="col" style={{ width: "15%" }}>Team</th>
-              <th scope="col" style={{ width: "15%" }}>Points</th>
-              <th scope="col" style={{ width: "15%" }}>Action</th>
+              <th scope="col" style={{ width: "15%" }}>
+                Team
+              </th>
+              <th scope="col" style={{ width: "15%" }}>
+                Points
+              </th>
+              <th scope="col" style={{ width: "15%" }}>
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>

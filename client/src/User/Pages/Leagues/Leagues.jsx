@@ -7,6 +7,8 @@ import "../../../index.css";
 import CreateLeague from "./createLeague";
 import JoinLeague from "./joinLeague";
 
+//fetch leagues from database in function fetch leagues
+//and pass it to createLeague.jsx and joinLeague.jsx
 export default function Leagues() {
   const [loading, setLoading] = useState(false);
   const { userId } = useChkUserAuth();
@@ -102,7 +104,6 @@ export default function Leagues() {
         userId={userId}
         setLoading={setLoading}
       />
-
     </div>
   );
 }

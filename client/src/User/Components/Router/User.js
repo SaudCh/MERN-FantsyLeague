@@ -16,6 +16,9 @@ import About from "../../Pages/About/About"
 import Rules from "../../Pages/Rules/Rules"
 import Standing from "../../Pages/Standings/Standing";
 
+
+//return two function 
+//when user is logged out
 export function LoggedOutUserRouter() {
   const adminContext = useContext(AdminAuthContext);
 
@@ -63,6 +66,7 @@ export function LoggedOutUserRouter() {
   );
 }
 
+//when user is logged in
 export function LoggedInUserRouter() {
   const adminContext = useContext(AdminAuthContext);
 

@@ -4,6 +4,8 @@ import { DeleteIcon } from "../../Components/Icons";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
+// gets data from Leagues.jsx of created leagues by user and map it
+// also contain button to open create league modal
 export default function CreateLeague(props) {
   const { league, fetchLeague, userId, setLoading } = props;
 
@@ -17,6 +19,7 @@ export default function CreateLeague(props) {
     setaddLeagueModal(false);
   }
 
+  //detele leagues
   const deleteLeague = async (leagueId) => {
     try {
       setLoading(true);

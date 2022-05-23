@@ -54,6 +54,7 @@ function Info() {
       {loading && <LoadingSpinner asOverlay />}
 
       <div className="container-fluid">
+        {/* return images of player selected */}
         <div className="row align-items-center justify-content-center">
           {team.striker1 ? (
             <div className="col-6 col-md-2 mt-4">
@@ -152,6 +153,7 @@ function Info() {
         </div>
       </div>
 
+      {/* return indian super league top players */}
       <div
         id="scoreaxis-widget-4c02e"
         className="mt-5"

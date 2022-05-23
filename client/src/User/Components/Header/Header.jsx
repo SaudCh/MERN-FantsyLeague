@@ -5,8 +5,11 @@ import { toast } from "react-toastify";
 
 function Header() {
   const history = useHistory();
+  //get login State and logout function from ChkUser Auth
   const { userLogout, isUserLoggedIn } = useChkUserAuth();
   //console.log(userId);
+
+  //logout function
   const logout = () => {
     userLogout();
     history.push("/");

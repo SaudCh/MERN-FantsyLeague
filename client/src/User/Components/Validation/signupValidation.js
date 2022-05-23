@@ -1,3 +1,4 @@
+//validation function for register
 export const signupValidation = (data) => {
     let errors = {};
     

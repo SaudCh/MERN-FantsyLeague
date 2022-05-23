@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 
+//custom hooks to login and logout user from local storage
 export const useUserAuth = () => {
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
     const [userId, setUserId] = useState(false);
